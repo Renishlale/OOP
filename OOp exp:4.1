@@ -1,0 +1,49 @@
+ #include <iostream>
+ using namespace std;
+
+class result2;//declaring class result2 before to avoid any kind of error
+
+class result1
+{
+    private:
+    int marks1;
+    public:
+    int input1()
+    {
+      cout<<"Enter the marks of the student 1:";
+      cin>>marks1;
+      cout<<" Marks:"<<marks1;
+      
+      return 0;
+    } 
+     friend int avg(result1,result2);
+};
+class result2
+{
+    private:
+    int marks2;
+    public:
+    int input2()
+    {
+     cout<<"\n\n Enter the marks of the student 2:";
+     cin>>marks2;
+     cout<<"Marks:"<<marks2;
+     return 0;
+    }
+     friend int avg(result1,result2);
+};
+ 
+int avg(result1 m1,result2 m2)
+{
+    return((m1.marks1+m2.marks2)/2);
+}
+ int main() 
+{
+    result1 r1;
+    result2 r2;
+    r1.input1();
+    r2.input2();
+    cout<<"\n\n Average of two results:"<<avg(r1,r2);
+    
+     return 0;
+}
