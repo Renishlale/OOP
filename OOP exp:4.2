@@ -1,0 +1,58 @@
+#include <iostream>
+ using namespace std;
+
+class num2;//declaring class result2 before to avoid any kind of error
+
+class num1
+{
+    private:
+    int n1;
+    public:
+    int input1()
+    {
+      cout<<"\n Enter the any number:";
+      cin>>n1;
+      cout<<" Number:"<<n1;
+      return 0;
+    } 
+     friend int grt(num1,num2);
+};
+class num2
+{
+    private:
+    int n2;
+    public:
+    int input2()
+    {
+     cout<<" \n Enter the any number:";
+     cin>>n2;
+     cout<<"  Number:"<<n2 ;
+     return 0;
+    }
+     friend int grt(num1,num2);
+};
+ 
+int grt(num1 m1,num2 m2)
+{
+    int g;
+    if(m1.n1>m2.n2)
+    {
+       g=m1.n1; 
+    }
+    else
+    {
+        g=m2.n2;
+    }
+
+    return(g);
+}
+ int main() 
+{
+    num1 s1;
+    num2 s2;
+    s1.input1();
+    s2.input2();
+    cout<<"\n\n Greatest number:"<<grt(s1,s2);
+    
+     return 0;
+}
