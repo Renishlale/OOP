@@ -1,0 +1,65 @@
+#include <iostream>
+ using namespace std;
+ class car 
+ {
+     private:
+     char car_name[50];
+     char car_variant[50];
+     public:
+     int input1()
+     {
+         cout<<"\n Enter the car name:";
+         cin>>car_name;
+         cout<<"\n Varient of the car:";
+         cin>>car_variant;
+         return 0;
+     }
+     int output1()
+     {
+         cout<<"\n Car name:"<<car_name;
+         cout<<"\n Variant:"<<car_variant;
+         return 0;
+     }
+     class bike 
+ {
+     private:
+     char bike_name[50];
+     char bike_variant[50];
+     public:
+     int input2()
+     {
+         cout<<"\n \n Enter the bike name:"<<endl;
+         cin>>bike_name;
+         cout<<"\n Variant of the bike:";
+         cin>>bike_variant;
+         return 0;
+     }
+     int output2()
+     {
+         cout<<"\n Bike name:"<<bike_name;
+         cout<<"\n Variant:"<<bike_variant;
+         return 0;
+     }
+  };
+ };
+ 
+ int main()
+ {
+     car c;
+     c.input1();
+     c.output1();
+     car::bike b;
+     b.input2();
+     b.output2();
+     
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
