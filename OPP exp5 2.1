@@ -1,0 +1,46 @@
+ 
+#include <iostream>
+#include<string>
+using namespace std;
+
+class student
+{
+    public:
+    string name;
+    int per;
+    
+    public:
+    student()
+    {
+         name="Renish";
+         per=95;
+    }
+    student(student&t)
+    {
+        name=t.name;
+        per=t.per;
+    }
+    int output()
+    {
+        cout<<"\n Name:"<<name;
+        cout<<"\n Percentage:"<<per;
+        cout<<"%";
+        return 0;
+    }
+};
+
+
+
+
+
+int main() 
+{
+   
+    student s1;
+    
+    cout<<"\n Student info:";
+    student s2(s1);
+    s1.output();
+     
+     return 0;
+}
