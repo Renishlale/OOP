@@ -1,0 +1,49 @@
+    #include <iostream>
+ #include<string>
+using namespace std;
+ 
+class college 
+{   public:
+    int roll_no;
+    char name[50];
+    string course;
+
+    public:
+    college()
+ {
+      course="Computer_science";
+    
+ }
+ 
+ int input()
+ {
+    
+     cout<<"\n Enter  Name:";
+     cin>>name;
+     cout<<"\n Enter  Roll no.:";
+     cin>>roll_no;
+     return 0;
+ }     
+  int output()   
+  {
+    cout<<"\n Name:"<<name;
+    cout<<"\n Roll no.:"<<roll_no;
+    cout<<"\n Course:"<<course;
+      cout<<"\n";
+    
+     
+     return 0;
+ }
+};
+ 
+ 
+int main() 
+{
+   college c1,c2;
+   c1.input();
+   c1.output();
+   c2.input();
+   c2.output();
+
+    return 0;
+}
