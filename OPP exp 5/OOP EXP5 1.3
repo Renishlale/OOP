@@ -1,0 +1,45 @@
+#include <iostream>
+#include<string>
+using namespace std;
+ 
+class summation 
+{   public:
+    int n;
+    int sum=0;
+    public:
+    summation()
+    {
+       n=10;
+        
+      }
+       summation(summation &t)
+    {
+        n=t.n;
+        
+      }
+      
+    int output()
+    {
+          for( int i=1;i<=n;i++)
+        {
+            sum=sum+i;
+        }
+        
+        cout<<"Sum:"<<sum;
+        return 0;
+    }
+};
+    
+    
+    
+    int main()
+    {
+        summation s1;
+        summation s2(s1);
+        s2.output();  
+        
+        
+    }
+    
+    
+    
