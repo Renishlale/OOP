@@ -1,0 +1,85 @@
+ 
+#include <iostream>
+using namespace std;
+
+class num
+{
+    public:
+    int a,b;
+    public:
+    int getAB()
+    {
+        cout<<"Enter the value of A:";
+        cin>>a;
+        cout<<"Enter the value of B:";
+        cin>>b;
+        return 0;
+        
+    }
+};
+
+class add:public num
+{
+    public:
+    int addition()
+    {
+        cout<<"Addition:"<<a+b;
+           cout<<"\n";
+        return 0;
+    }
+};
+class sub:public num
+{
+    public:
+    int subtraction()
+    {
+        cout<<"Subtraction:"<<a-b;
+        cout<<"\n";
+        return 0;
+    }
+};
+
+class divi:public num
+{
+    public:
+    int division()
+    {
+        cout<<"Division:"<<a/b;
+           cout<<"\n";
+        return 0;
+    }
+};
+class mult:public num
+{
+    public:
+    int multiplication()
+    {
+        cout<<"Multiplication:"<<a*b;
+           cout<<"\n";
+        return 0;
+    }
+};
+
+int main() 
+{
+    add a;
+    sub s;
+    divi d;
+    mult m;
+    
+    a.getAB();
+    a.addition();
+    
+    s.getAB();
+    s.subtraction();
+    
+    d.getAB();
+    d.division();
+    
+    m.getAB();
+    m.multiplication();
+    
+    
+
+    
+}
