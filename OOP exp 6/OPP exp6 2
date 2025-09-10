@@ -1,0 +1,65 @@
+  
+#include <iostream>
+#include<string>
+using namespace std;
+
+
+class car
+{
+    public:
+    int eng_no;
+    string variant_car;
+    public:
+    int getcar_details()
+    {
+        cout<<"Enter the Engine number of the car:";
+        cin>>eng_no;
+        cout<<"Enter the variant of the car:";
+        cin>>variant_car;
+        return 0;
+    }
+};
+
+
+   
+
+class bike
+{
+    public:
+       string variant_bike;
+       int max_speed;
+ 
+    public:
+    int getbike_details()
+    {
+        
+       cout<<" Enter the Bike's maximum speed:";
+       cin>>max_speed;
+       cout<<" Enter the Bike variant:";
+       cin>>variant_bike;
+       return 0;
+    }
+};
+class print:public car,public bike
+{
+    public:
+    int print_details()
+    {
+        cout<<"\n Engine number of the car:"<<eng_no;
+         cout<<"\n Variant of the car:"<<variant_car;
+          cout<<"\n Maxiumum speed of the bike:"<<max_speed;
+          cout<<"km/h";
+         cout<<"\n Variant of the car:"<<variant_bike;
+         return 0;
+}
+};
+
+int main()
+{
+    print p;
+    p.getcar_details();
+    p.getbike_details();
+    p.print_details();
+}
+
+ 
