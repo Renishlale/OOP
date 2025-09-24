@@ -1,0 +1,23 @@
+   
+#include <iostream>
+using namespace std;
+class a
+{
+    
+public:
+void area(int x,int y)
+{
+    cout<<"Area of the Rectangle:"<<x*y;
+}
+void area(int x)
+{
+     cout<<"\n Area of the  Square:"<<x*x;
+}
+};
+int main() 
+{
+    a o; 
+    o.area(10,20);
+    o.area(10);
+    return 0;
+}

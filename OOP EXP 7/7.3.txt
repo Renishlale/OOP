@@ -1,0 +1,23 @@
+  
+#include <iostream>
+using namespace std;
+class n
+{
+    
+public:
+int num(int x)
+{
+   return(-x);    
+}
+ 
+};
+int main() 
+{
+    n o;
+    int b;
+    cout<<("Enter the any value:");
+    cin>>b;
+    cout<<"new value :"<<o.num(b);
+    
+    return 0;
+}
