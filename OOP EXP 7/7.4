@@ -1,26 +1,40 @@
-#include <iostream>
-using namespace std;
+  #include <iostream>
 
 class Number {
 public:
     int num;
+
     Number(int n = 0) { num = n; }
-    void operator++() { num = num + 1; }
-    void operator++(int) { num = num + 1; }
-    void display() { cout << "Value: " << num << endl; }
+
+    void operator++() { 
+        num = num + 1; 
+    }
+
+    Number operator++(int) {
+        Number temp(num);
+        num = num + 1;
+        return temp;
+    }
+
+    void display() { 
+        std::cout << "Value: " << num << std::endl; 
+    }
 };
 
 int main() {
-    int x;
-    cin >> x;
+    int x = 5;
     Number n(x);
-    cout << "Original value: ";
+
+    std::cout << "Original value: ";
     n.display();
+
     ++n;
-    cout << "After pre-increment: ";
+    std::cout << "After pre-increment: ";
     n.display();
+
     n++;
-    cout << "After post-increment: ";
+    std::cout << "After post-increment: ";
     n.display();
+
     return 0;
 }
