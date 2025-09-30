@@ -1,4 +1,5 @@
-  #include <iostream>
+    #include <iostream>
+   using namespace std;
 
 class Number {
 public:
@@ -25,15 +26,15 @@ int main() {
     int x = 5;
     Number n(x);
 
-    std::cout << "Original value: ";
+    cout << "Original value: ";
     n.display();
 
     ++n;
-    std::cout << "After pre-increment: ";
+    cout << "After pre-increment: ";
     n.display();
 
     n++;
-    std::cout << "After post-increment: ";
+    cout << "After post-increment: ";
     n.display();
 
     return 0;
