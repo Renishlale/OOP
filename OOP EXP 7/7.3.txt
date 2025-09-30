@@ -4,34 +4,18 @@ using namespace std;
 class Number {
 public:
     int num;
-
-    // constructor
-    Number(int n = 0) {
-        num = n;
-    }
-
-    // Overload unary minus operator
-    void operator-() {
-        num = -num;  
-    }
-
-    void display() {
-        cout << "Value: " << num << endl;
-    }
+    Number(int n = 0) { num = n; }
+    void operator-() { num = -num; }
+    void display() { cout << "Value: " << num << endl; }
 };
 
 int main() {
     int x;
     cout << "Enter any value: ";
     cin >> x;
-
     Number n(x);
-
-    -n;  
-
+    -n;
     cout << "After negation: ";
     n.display();
-
     return 0;
 }
-
