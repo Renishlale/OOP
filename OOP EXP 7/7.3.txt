@@ -1,23 +1,36 @@
-  
-#include <iostream>
+ #include <iostream>
 using namespace std;
-class n
-{
-    
+
+class Number {
 public:
-int num(int x)
-{
-   return(-x);    
-}
- 
+    int num;
+
+    // constructor
+    Number(int n = 0) {
+        num = n;
+    }
+
+    // Overload unary minus operator
+    void operator-() {
+        num = -num;   // negate the value
+    }
+
+    void display() {
+        cout << "Value: " << num << endl;
+    }
 };
-int main() 
-{
-    n o;
-    int b;
-    cout<<("Enter the any value:");
-    cin>>b;
-    cout<<"new value :"<<o.num(b);
-    
+
+int main() {
+    int x;
+    cout << "Enter any value: ";
+    cin >> x;
+
+    Number n(x);
+
+    -n;  // use unary operator
+
+    cout << "After negation: ";
+    n.display();
+
     return 0;
 }
