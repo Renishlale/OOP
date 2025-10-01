@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Sring {
+private:
+    char name[20];
+public:
+    void getdata() {
+        cout << "Enter a string: ";
+        cin >> name;
+    }
+
+    void operator+(Sring s2) {
+        strcat(name, s2.name);
+    }
+
+    void display() {
+        cout << "Concatenated string: " << name;
+    }
+};
+
+int main() {
+    Sring s1, s2;
+    s1.getdata();
+    s2.getdata();
+    s1 + s2;
+    s1.display();
+    return 0;
+}
