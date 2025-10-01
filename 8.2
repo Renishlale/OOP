@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+class ILogin {
+protected:
+    string name;
+    string password;
+public:
+    virtual void accept() {
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter password: ";
+        cin >> password;
+    }
+    virtual void display() = 0;
+};
+
+class EmailLogin : public ILogin {
+private:
+    string email;
+public:
+    void accept() {
+        ILogin::accept();
+        cout << "Enter email: ";
+        cin >> email;
+    }
+    void display() {
+        cout << "\n-- Email Login Details --\n";
+        cout << "Name: " << name << endl;
+        cout << "Password: " << password << endl;
+        cout << "Email: " << email << endl;
+    }
+};
+
+class MembershipLogin : public ILogin {
+private:
+    string membershipId;
+public:
+    void accept() {
+        ILogin::accept();
+        cout << "Enter membership Id: ";
+        cin >> membershipId;
+    }
+    void display() {
+        cout << "\n-- Membership Login Details --\n";
+        cout << "Name: " << name << endl;
+        cout << "Password: " << password << endl;
+        cout << "Membership Id: " << membershipId << endl;
+    }
+};
+
+int main() {
+    EmailLogin e;
+    MembershipLogin m;
+
+    cout << "Enter Email Login Details:\n";
+    e.accept();
+    e.display();
+
+    cout << "\nEnter Membership Login Details:\n";
+    m.accept();
+    m.display();
+
+    return 0;
+}
