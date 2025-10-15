@@ -1,0 +1,23 @@
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+int main() {
+    string fileContent = "Hello 123 I am 45 Chrisselle 6";
+    istringstream fin(fileContent);
+    char ch;
+    int digits = 0, spaces = 0;
+
+    while (fin.get(ch)) {
+        if (isdigit(ch))
+            digits++;
+        else if (ch == ' ')
+            spaces++;
+    }
+
+    cout << "File content: " << fileContent << endl;
+    cout << "Number of digits: " << digits << endl;
+    cout << "Number of spaces: " << spaces << endl;
+
+    return 0;
+}
