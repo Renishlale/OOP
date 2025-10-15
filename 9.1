@@ -1,0 +1,19 @@
+ #include <iostream>
+#include <sstream>
+using namespace std;
+
+int main() {
+    string offc = "Hello\nI am\nChrisselle";
+    istringstream ff(offc);
+    ostringstream sf;
+    char ch;
+
+    while (ff.get(ch)) {
+        sf.put(ch);
+    }
+
+    cout << "Contents copied to 2nd text\n";
+    cout << sf.str() << endl;
+
+    return 0;
+}
