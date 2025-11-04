@@ -7,7 +7,7 @@ T square(T x){
     return x*x;
 }
 
-// Specialization for string
+
 template<>
 string square(string s){
     return s + s;
@@ -20,3 +20,4 @@ int main(){
     cout<<"Square of int: "<<square(n)<<endl;
     cout<<"Square of string: "<<square(s)<<endl;
 }
+
