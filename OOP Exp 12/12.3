@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+struct Item {
+    int code;
+    string name;
+    int quantity;
+    double cost;
+};
+
+bool compareByName(const Item &a, const Item &b) {
+    return a.name < b.name;
+}
+
+int main() {
+    vector<Item> items = {
+        {101, "Keyboard", 10, 500},
+        {103, "Monitor", 5, 7000},
+        {102, "Mouse", 20, 250}
+    };
+
+    cout << "\nItems before sorting:\n";
+    for(const auto &i : items)
+        cout << i.code << " " << i.name << " " << i.quantity << " " << i.cost << endl;
+
+    sort(items.begin(), items.end(), compareByName);
+
+    cout << "\nItems after sorting by name:\n";
+    for(const auto &i : items)
+        cout << i.code << " " << i.name << " " << i.quantity << " " << i.cost << endl;
+
+    string key;
+    cout << "\nEnter item name to search: ";
+    cin >> key;
+
+    auto it = find_if(items.begin(), items.end(), [&](const Item &i){ return i.name == key; });
+
+    if(it != items.end())
+        cout << "Found: " << it->code << " " << it->name << " " << it->quantity << " " << it->cost << endl;
+    else
+        cout << "Item not found!\n";
+
+    return 0;
+}
