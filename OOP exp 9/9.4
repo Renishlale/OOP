@@ -1,0 +1,30 @@
+ #include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    ifstream file;
+    string word, target;
+    int count = 0;
+
+    file.open("Sample.txt");
+    if (!file) {
+        cout << "File not found" << endl;
+        return 0;
+    }
+
+    cout << "Enter the word to count: ";
+    cin >> target;
+
+    while (file >> word) {
+        if (word == target) {
+            count++;
+        }
+    }
+
+    cout << "The word '" << target << "' occurred " << count << " times" << endl;
+    file.close();
+
+    return 0;
+}
