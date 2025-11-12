@@ -1,0 +1,26 @@
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    fstream file;
+    string word;
+    int count = 0;
+
+    file.open("Sample.txt", ios::in);
+    if (!file) {
+        cout << "File not found!" << endl;
+        return 0;
+    }
+
+    while (file >> word) {
+        count++;
+    }
+
+    cout << "Number of words: " << count << endl;
+
+    file.close();
+    return 0;
+}
