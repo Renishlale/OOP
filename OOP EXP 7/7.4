@@ -1,6 +1,6 @@
   
-    #include <iostream>
-   using namespace std;
+#include <iostream>
+using namespace std;
 
 class Number {
 public:
@@ -8,35 +8,31 @@ public:
 
     Number(int n = 0) { num = n; }
 
+    // Pre-increment: ++n
     void operator++() { 
         num = num + 1; 
     }
 
-    Number operator++(int) {
-        Number temp(num);
-        num = num + 1;
-        return temp;
+    // Post-increment: n++
+    void operator++(int) {  // simplest version, returns nothing
+        num = num + 1; 
     }
 
     void display() { 
-        cout << "Value: " << num ; 
+        cout << num; 
     }
 };
 
 int main() {
-    int x = 5;
-    Number n(x);
+    Number n(5);
 
-    cout << "\n Original value: ";
-    n.display();
+    cout << "Original: "; n.display();
 
     ++n;
-    cout << "\n After pre-increment: ";
-    n.display();
+    cout << "\nPre-increment: "; n.display();
 
     n++;
-    cout << "\n After post-increment: ";
-    n.display();
+    cout << "\nPost-increment: "; n.display();
 
     return 0;
 }
